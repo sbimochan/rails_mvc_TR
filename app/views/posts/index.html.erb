@@ -1,9 +1,14 @@
+    <div id="header">
+      <%= render 'layouts/header' %>
+    </div> 
+
+
 <% @posts.each do |post| %>
   <h2><%= post.title %> by <%= post.author %></h2>
   <p>
     <%= post.content %>
-    <a href="posts/<%=post.id %>">show</a>
-    <a href="posts/<%=post.id %>/edit">edit</a>
+    <a href="<%=post.id %>">show</a>
+    <a href="<%=post.id %>/edit">edit</a>
     <%= link_to 'Destroy', post, :method => :delete, :confirm => "Are you sure?" %>
   </p>
 <% end %>
